@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { 
   Cog, 
   Wrench, 
@@ -14,10 +14,7 @@ import {
 } from 'lucide-react';
 
 const WhatWeDo = () => {
-  const [scrollDirection, setScrollDirection] = useState(1); // 1 for right, -1 for left
   const [isPaused, setIsPaused] = useState(false);
-  const sectionRef = useRef(null);
-  const lastScrollY = useRef(0);
 
   const services = [
     {
@@ -97,29 +94,9 @@ const WhatWeDo = () => {
   // Duplicate services for infinite scroll effect
   const duplicatedServices = [...services, ...services, ...services];
 
-  // Detect scroll direction
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > lastScrollY.current) {
-        // Scrolling down - reverse direction
-        setScrollDirection(-1);
-      } else if (currentScrollY < lastScrollY.current) {
-        // Scrolling up - normal direction
-        setScrollDirection(1);
-      }
-      
-      lastScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <section 
-      ref={sectionRef}
       className="relative py-20 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 overflow-hidden"
     >
       {/* Decorative Background Elements */}
@@ -149,7 +126,7 @@ const WhatWeDo = () => {
           <div 
             className="flex gap-6 py-8"
             style={{
-              animation: `scroll-${scrollDirection === 1 ? 'right' : 'left'} 40s linear infinite`,
+              animation: 'scroll-right 10s linear infinite',
               animationPlayState: isPaused ? 'paused' : 'running'
             }}
             onMouseEnter={() => setIsPaused(true)}

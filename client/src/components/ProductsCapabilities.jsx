@@ -60,7 +60,7 @@ const ProductsCapabilities = () => {
       description: 'Robust equipment and components designed for harsh environments in oil and gas exploration, extraction, and processing.',
       icon: Droplet,
       gradient: 'from-yellow-600 to-orange-500',
-      image: '/oil and gas.jpeg',
+      image: '/oil%20and%20gas.jpeg',
       features: ['Drilling Equipment', 'Pipeline Systems', 'Pressure Vessels']
     }
   ];
@@ -112,15 +112,15 @@ const ProductsCapabilities = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" style={{ color: 'rgb(3, 46, 114)' }}>
+          <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg ${selectedBackground !== null ? 'text-white' : 'text-[rgb(3,46,114)]'}`}>
             Products & Capabilities
           </h2>
           <div className="flex items-center justify-center space-x-4 mb-6">
-            <div className="h-1 w-20 bg-gradient-to-r from-transparent to-blue-500 rounded-full"></div>
-            <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-            <div className="h-1 w-20 bg-gradient-to-l from-transparent to-blue-500 rounded-full"></div>
+            <div className={`h-1 w-20 rounded-full ${selectedBackground !== null ? 'bg-gradient-to-r from-transparent to-blue-400' : 'bg-gradient-to-r from-transparent to-blue-500'}`}></div>
+            <div className={`h-2 w-2 rounded-full ${selectedBackground !== null ? 'bg-blue-400 shadow-lg shadow-blue-400/50' : 'bg-blue-500'}`}></div>
+            <div className={`h-1 w-20 rounded-full ${selectedBackground !== null ? 'bg-gradient-to-l from-transparent to-blue-400' : 'bg-gradient-to-l from-transparent to-blue-500'}`}></div>
           </div>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className={`text-lg sm:text-xl max-w-3xl mx-auto drop-shadow-md ${selectedBackground !== null ? 'text-gray-200' : 'text-gray-600'}`}>
             Pioneering innovation across multiple industries with cutting-edge technology and unmatched expertise.
           </p>
         </div>
@@ -276,14 +276,14 @@ const ProductsCapabilities = () => {
 
         {/* Additional Info */}
         <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-6">
+          <p className={`mb-6 drop-shadow-md ${selectedBackground !== null ? 'text-gray-200' : 'text-gray-600'}`}>
             Interested in our products and capabilities?
           </p>
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
               Contact Our Team
             </button>
-            <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-full shadow-lg hover:shadow-xl border-2 border-blue-600 transform hover:-translate-y-1 transition-all duration-300">
+            <button className={`px-8 py-4 font-semibold rounded-full shadow-lg hover:shadow-xl border-2 transform hover:-translate-y-1 transition-all duration-300 ${selectedBackground !== null ? 'bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20' : 'bg-white text-blue-600 border-blue-600'}`}>
               Download Brochure
             </button>
           </div>

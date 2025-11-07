@@ -6,127 +6,184 @@ const OurClients = () => {
     {
       title: 'AEROSPACE',
       clients: [
-        { name: 'Boeing', logo: 'https://logo.clearbit.com/boeing.com' },
-        { name: 'Rolls-Royce', logo: 'https://logo.clearbit.com/rolls-royce.com' },
-        { name: 'GE Aviation', logo: 'https://logo.clearbit.com/ge.com' },
-        { name: 'Collins Aerospace', logo: 'https://logo.clearbit.com/collinsaerospace.com' },
-        { name: 'Safran', logo: 'https://logo.clearbit.com/safrangroup.com' },
-        { name: 'Honeywell', logo: 'https://logo.clearbit.com/honeywell.com' }
-      ],
-      gradient: 'from-blue-500 to-cyan-500'
+        { name: 'Boeing', logo: '/boieng logo.png' },
+        { name: 'Rolls-Royce', logo: '/rolls royce.webp' },
+        { name: 'GE Aviation', logo: '/logo.png' },
+        { name: 'Collins Aerospace', logo: '/logo 1.png' },
+        { name: 'Safran', logo: '/safran.svg' },
+        { name: 'Honeywell', logo: '/honeywell-logo.svg' }
+      ]
     },
     {
       title: 'DEFENSE',
       clients: [
-        { name: 'Indian Navy', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Indian_Navy_Crest.svg/200px-Indian_Navy_Crest.svg.png' },
-        { name: 'BDL', logo: 'https://www.bdl-india.in/images/logo.png' },
-        { name: 'Ministry of Defence', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Emblem_of_India.svg/200px-Emblem_of_India.svg.png' },
-        { name: 'DRDO', logo: 'https://www.drdo.gov.in/drdo/sites/default/files/inline-images/drdo-logo.png' },
-        { name: 'Indian Air Force', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Emblem_of_Indian_Air_Force.svg/200px-Emblem_of_Indian_Air_Force.svg.png' },
-        { name: 'Indian Coast Guard', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Indian_Coast_Guard_Logo.svg/200px-Indian_Coast_Guard_Logo.svg.png' }
-      ],
-      gradient: 'from-red-500 to-orange-500'
+        { name: 'Indian Navy', logo: '/logo.png' },
+        { name: 'BDL', logo: '/logo 1.png' },
+        { name: 'Ministry of Defence', logo: '/boieng logo.png' },
+        { name: 'DRDO', logo: '/logo.png' },
+        { name: 'Indian Air Force', logo: '/logo 1.png' },
+        { name: 'Indian Coast Guard', logo: '/logo.png' }
+      ]
     },
     {
       title: 'OIL AND GAS',
       clients: [
-        { name: 'Halliburton', logo: 'https://logo.clearbit.com/halliburton.com' },
-        { name: 'Schlumberger', logo: 'https://logo.clearbit.com/slb.com' }
-      ],
-      gradient: 'from-yellow-500 to-orange-500'
+        { name: 'Halliburton', logo: '/logo 1.png' },
+        { name: 'Schlumberger', logo: '/logo.png' }
+      ]
     },
     {
       title: 'MEDICAL',
       clients: [
-        { name: 'GE HealthCare', logo: 'https://logo.clearbit.com/gehealthcare.com' },
-        { name: 'Cytiva', logo: 'https://logo.clearbit.com/cytiva.com' }
-      ],
-      gradient: 'from-green-500 to-teal-500'
+        { name: 'GE HealthCare', logo: '/health.svg' },
+        { name: 'Cytiva', logo: '/health.svg' }
+      ]
     }
   ];
 
   return (
-    <section className="py-20 px-6 sm:px-12 lg:px-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-16 px-8 sm:px-16 lg:px-24 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex items-center justify-center mb-16">
-          <div className="flex items-center space-x-4">
-            <Sparkles className="w-8 h-8 text-blue-600" strokeWidth={2} />
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold" style={{ color: 'rgb(3, 46, 114)' }}>
-              Our Clients
-            </h2>
-          </div>
+        <div className="flex items-center mb-12">
+          <Sparkles className="w-10 h-10 mr-4 text-gray-800" strokeWidth={2.5} />
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            Our Clients
+          </h2>
         </div>
 
-        {/* Client Categories Grid */}
-        <div className="space-y-16">
-          {clientCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="relative">
-              {/* Category Title */}
-              <div className="mb-8">
-                <div className="inline-flex items-center space-x-3">
-                  <div className={`h-1 w-12 bg-gradient-to-r ${category.gradient} rounded-full`}></div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 tracking-wide">
-                    {category.title}
-                  </h3>
-                  <div className={`h-1 w-12 bg-gradient-to-l ${category.gradient} rounded-full`}></div>
-                </div>
-              </div>
-
-              {/* Client Logos Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.clients.map((client, clientIndex) => (
-                  <div
-                    key={clientIndex}
-                    className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-transparent overflow-hidden"
-                  >
-                    {/* Gradient background on hover */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                    
-                    {/* Logo Container */}
-                    <div className="relative flex items-center justify-center h-24">
-                      <div className="relative w-full h-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
-                        {/* Placeholder for logo - replace with actual logos */}
-                        <div className="flex items-center justify-center w-full h-full">
-                          <span className="text-lg font-bold text-gray-700 group-hover:text-gray-900 transition-colors duration-300 text-center">
-                            {client.name}
-                          </span>
-                        </div>
-                      </div>
+        {/* Custom Layout Grid - Exact replica of image */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* AEROSPACE - Left section (3 columns) */}
+          <div className="lg:col-span-3">
+            <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase mb-5">
+              AEROSPACE
+            </h3>
+            <div className="grid grid-cols-2 gap-4">
+              {clientCategories[0].clients.map((client, clientIndex) => (
+                <div
+                  key={clientIndex}
+                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                  style={{ boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' }}
+                >
+                  <div className="flex items-center justify-center h-16">
+                    <img 
+                      src={client.logo} 
+                      alt={client.name}
+                      className="max-w-full max-h-full object-contain"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="hidden items-center justify-center w-full h-full">
+                      <span className="text-xs font-semibold text-gray-700 text-center">
+                        {client.name}
+                      </span>
                     </div>
-
-                    {/* Decorative corner element */}
-                    <div className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-10 rounded-bl-3xl transition-opacity duration-500`}></div>
-                    
-                    {/* Bottom accent line */}
-                    <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${category.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
                   </div>
-                ))}
-              </div>
-
-              {/* Decorative divider (except for last category) */}
-              {categoryIndex < clientCategories.length - 1 && (
-                <div className="mt-16 flex items-center justify-center">
-                  <div className="h-px w-full max-w-md bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
                 </div>
-              )}
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* Trust Badge Section */}
-        <div className="mt-20 text-center">
-          <div className="inline-flex flex-col items-center space-y-4 p-8 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl border border-blue-100">
-            <div className="flex items-center space-x-2">
-              <div className="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
-              <p className="text-lg font-semibold text-gray-800">
-                Trusted by Industry Leaders Worldwide
-              </p>
-              <div className="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></div>
+          {/* DEFENSE - Middle section (4 columns) */}
+          <div className="lg:col-span-4">
+            <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase mb-5">
+              DEFENSE
+            </h3>
+            <div className="grid grid-cols-2 gap-4">
+              {clientCategories[1].clients.map((client, clientIndex) => (
+                <div
+                  key={clientIndex}
+                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                  style={{ boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' }}
+                >
+                  <div className="flex items-center justify-center h-16">
+                    <img 
+                      src={client.logo} 
+                      alt={client.name}
+                      className="max-w-full max-h-full object-contain"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="hidden items-center justify-center w-full h-full">
+                      <span className="text-xs font-semibold text-gray-700 text-center">
+                        {client.name}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <p className="text-gray-600 max-w-2xl">
-              Partnering with the world's most prestigious organizations across aerospace, defense, oil & gas, and medical industries.
-            </p>
+          </div>
+
+          {/* OIL AND GAS - Right top section (2.5 columns) */}
+          <div className="lg:col-span-2">
+            <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase mb-5">
+              OIL AND GAS
+            </h3>
+            <div className="grid grid-cols-2 gap-4">
+              {clientCategories[2].clients.map((client, clientIndex) => (
+                <div
+                  key={clientIndex}
+                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                  style={{ boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' }}
+                >
+                  <div className="flex items-center justify-center h-16">
+                    <img 
+                      src={client.logo} 
+                      alt={client.name}
+                      className="max-w-full max-h-full object-contain"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="hidden items-center justify-center w-full h-full">
+                      <span className="text-xs font-semibold text-gray-700 text-center">
+                        {client.name}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* MEDICAL - Right bottom section (2.5 columns) */}
+          <div className="lg:col-span-3">
+            <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase mb-5">
+              MEDICAL
+            </h3>
+            <div className="grid grid-cols-2 gap-4">
+              {clientCategories[3].clients.map((client, clientIndex) => (
+                <div
+                  key={clientIndex}
+                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                  style={{ boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' }}
+                >
+                  <div className="flex items-center justify-center h-16">
+                    <img 
+                      src={client.logo} 
+                      alt={client.name}
+                      className="max-w-full max-h-full object-contain"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="hidden items-center justify-center w-full h-full">
+                      <span className="text-xs font-semibold text-gray-700 text-center">
+                        {client.name}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const VideoAbout = () => {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full min-h-screen overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">
         <video
@@ -13,89 +13,55 @@ const VideoAbout = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-industrial-factory-with-robotic-arms-4371-large.mp4"
+            src="/281546.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        {/* Subtle gradient overlay - lighter to show more video */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
       </div>
 
-      {/* Content Overlay */}
-      <div className="relative z-10 h-full flex items-center justify-center px-6 sm:px-12 lg:px-20">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Animated content container */}
-          <div className="space-y-8 animate-fadeIn">
-            {/* Main Heading */}
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+      {/* Content Overlay - Left Side */}
+      <div className="relative z-10 h-full flex items-center px-6 sm:px-12 lg:px-20 py-20">
+        <div className="max-w-2xl">
+          {/* Main Heading */}
+          <div className="mb-12">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 drop-shadow-2xl">
               Our Legacy of Excellence
             </h2>
-
-            {/* Decorative line */}
-            <div className="flex items-center justify-center space-x-4">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-blue-400"></div>
-              <div className="h-1 w-1 rounded-full bg-blue-400"></div>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-blue-400"></div>
-            </div>
-
-            {/* Company Description */}
-            <div className="space-y-6 text-gray-200">
-              <p className="text-lg sm:text-xl lg:text-2xl font-light leading-relaxed">
-                Since our inception, <span className="font-semibold text-white">Raghuvamsi</span> has been at the forefront of 
-                manufacturing innovation, delivering world-class solutions that transform industries.
-              </p>
-              
-              <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto">
-                With decades of experience and a commitment to excellence, we've built a reputation 
-                for quality, precision, and reliability. Our state-of-the-art facilities and dedicated 
-                team work tirelessly to exceed expectations and drive progress in every project we undertake.
-              </p>
-
-              <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto">
-                From humble beginnings to becoming an industry leader, our journey is defined by 
-                innovation, integrity, and an unwavering dedication to our clients' success.
-              </p>
-            </div>
-
-            {/* Stats or Key Points */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 max-w-4xl mx-auto">
-              <div className="backdrop-blur-sm bg-white/10 rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl font-bold text-blue-400 mb-2">25+</div>
-                <div className="text-sm uppercase tracking-wider text-gray-300">Years of Excellence</div>
-              </div>
-              
-              <div className="backdrop-blur-sm bg-white/10 rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl font-bold text-blue-400 mb-2">500+</div>
-                <div className="text-sm uppercase tracking-wider text-gray-300">Projects Delivered</div>
-              </div>
-              
-              <div className="backdrop-blur-sm bg-white/10 rounded-lg p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl font-bold text-blue-400 mb-2">100%</div>
-                <div className="text-sm uppercase tracking-wider text-gray-300">Client Satisfaction</div>
-              </div>
+            {/* Decorative line - left aligned */}
+            <div className="flex items-center space-x-3 mt-6">
+              <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+              <div className="h-2 w-2 rounded-full bg-blue-400 shadow-lg shadow-blue-500/50"></div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex flex-col items-center space-y-2 animate-bounce">
-          <span className="text-white text-sm uppercase tracking-wider">Scroll</span>
-          <svg 
-            className="w-6 h-6 text-white" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M19 14l-7 7m0 0l-7-7m7 7V3" 
-            />
-          </svg>
+          {/* Content Cards - Compact */}
+          <div className="space-y-6">
+            {/* Raghuvamsi Card */}
+            <div className="backdrop-blur-md bg-black/40 rounded-xl p-6 border border-white/20 hover:bg-black/50 transition-all duration-300 shadow-xl">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 flex items-center drop-shadow-lg">
+                <span className="w-1 h-6 bg-blue-500 mr-3 rounded-full"></span>
+                Raghuvamsi
+              </h3>
+              <p className="text-sm sm:text-base text-gray-200 leading-relaxed drop-shadow-md">
+                Raghu Vamsi Group has carved a space for itself in the Aerospace & Defense industry worldwide over the past two decades since its inception in 2004. The Company and its subsidiaries have gained trust and built lasting relationships by delivering High Precision Engineering Components and Sub-Assemblies to some of the largest global corporations.
+              </p>
+            </div>
+
+            {/* History Card */}
+            <div className="backdrop-blur-md bg-black/40 rounded-xl p-6 border border-white/20 hover:bg-black/50 transition-all duration-300 shadow-xl">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 flex items-center drop-shadow-lg">
+                <span className="w-1 h-6 bg-cyan-500 mr-3 rounded-full"></span>
+                History
+              </h3>
+              <p className="text-sm sm:text-base text-gray-200 leading-relaxed drop-shadow-md">
+                The early foundations of the business were started by Mr. G. Thrimurthulu in 1992 in the area of Power Transmission, initiating cast iron castings and machining in 1998, which led the group to gain expertise and develop capabilities in precision engineering.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
