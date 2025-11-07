@@ -60,7 +60,7 @@ const ReachOut = () => {
           {/* Left Side - Text Content */}
           <div className="space-y-8">
             <div className="relative">
-              <h3 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg">
+              <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg">
                 Have a<br />
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                   Query?
@@ -74,7 +74,7 @@ const ReachOut = () => {
               </div>
             </div>
 
-            <p className="text-lg text-gray-300 leading-relaxed max-w-md drop-shadow-md">
+            <p className="text-lg text-gray-100 leading-relaxed max-w-md drop-shadow-md">
               We'd love to hear from you! Whether you have a question about our services, 
               need a quote, or want to discuss a potential partnership, our team is ready to help.
             </p>
@@ -86,8 +86,8 @@ const ReachOut = () => {
                   <Mail className="w-6 h-6 text-white" strokeWidth={2} />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400 font-medium">Email Us</p>
-                  <p className="text-white font-semibold">contact@company.com</p>
+                  <p className="text-sm text-gray-200 font-medium">Email Us</p>
+                  <p className="text-white font-bold">contact@company.com</p>
                 </div>
               </div>
 
@@ -96,8 +96,8 @@ const ReachOut = () => {
                   <MessageSquare className="w-6 h-6 text-white" strokeWidth={2} />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400 font-medium">Response Time</p>
-                  <p className="text-white font-semibold">Within 24 hours</p>
+                  <p className="text-sm text-gray-200 font-medium">Response Time</p>
+                  <p className="text-white font-bold">Within 24 hours</p>
                 </div>
               </div>
             </div>

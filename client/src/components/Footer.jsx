@@ -40,10 +40,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-b from-gray-100 to-gray-200 text-gray-700">
-      {/* Top Accent Line */}
-      <div className="h-1 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600"></div>
-
+    <footer className="relative text-white" style={{ backgroundColor: 'rgb(3, 46, 114)' }}>
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -57,8 +54,8 @@ const Footer = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-bold" style={{ color: 'rgb(3, 46, 114)' }}>Raghuvamshi</h3>
-                <p className="text-xs text-blue-600 font-semibold">Engineering Excellence</p>
+                <h3 className="text-xl font-bold text-white">Raghuvamshi</h3>
+                <p className="text-xs text-cyan-400 font-semibold">Engineering Excellence</p>
               </div>
             </div>
 
@@ -66,8 +63,8 @@ const Footer = () => {
             <div className="space-y-2">
               {/* Location */}
               <div className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-blue-600 mt-1 flex-shrink-0" strokeWidth={2} />
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <MapPin className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" strokeWidth={2} />
+                <p className="text-sm text-gray-300 leading-relaxed">
                   123 Industrial Park,<br />
                   Tech City, State 560001<br />
                   India
@@ -76,16 +73,16 @@ const Footer = () => {
 
               {/* Phone */}
               <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-blue-600 flex-shrink-0" strokeWidth={2} />
-                <a href="tel:+911234567890" className="text-sm text-gray-600 hover:text-blue-600 transition-colors">
+                <Phone className="w-4 h-4 text-cyan-400 flex-shrink-0" strokeWidth={2} />
+                <a href="tel:+911234567890" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors">
                   +91 123 456 7890
                 </a>
               </div>
 
               {/* Email */}
               <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-blue-600 flex-shrink-0" strokeWidth={2} />
-                <a href="mailto:info@raghuvamshi.com" className="text-sm text-gray-600 hover:text-blue-600 transition-colors">
+                <Mail className="w-4 h-4 text-cyan-400 flex-shrink-0" strokeWidth={2} />
+                <a href="mailto:info@raghuvamshi.com" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors">
                   info@raghuvamshi.com
                 </a>
               </div>
@@ -94,7 +91,7 @@ const Footer = () => {
 
           {/* Quick Links Section */}
           <div>
-            <h4 className="text-gray-900 font-bold mb-4 text-base uppercase tracking-wider">
+            <h4 className="text-white font-bold mb-4 text-base uppercase tracking-wider">
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -102,7 +99,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors duration-300 group"
+                    className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 group"
                   >
                     <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                     <span className="text-sm">{link.name}</span>
@@ -114,7 +111,7 @@ const Footer = () => {
 
           {/* Products Section */}
           <div>
-            <h4 className="text-gray-900 font-bold mb-4 text-base uppercase tracking-wider">
+            <h4 className="text-white font-bold mb-4 text-base uppercase tracking-wider">
               Products
             </h4>
             <ul className="space-y-2">
@@ -122,7 +119,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={product.href}
-                    className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors duration-300 group"
+                    className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 group"
                   >
                     <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={2.5} />
                     <span className="text-sm">{product.name}</span>
@@ -134,7 +131,7 @@ const Footer = () => {
 
           {/* Social Media Section */}
           <div>
-            <h4 className="text-gray-900 font-bold mb-4 text-base uppercase tracking-wider">
+            <h4 className="text-white font-bold mb-4 text-base uppercase tracking-wider">
               Connect With Us
             </h4>
             <div className="flex gap-2">
@@ -145,9 +142,9 @@ const Footer = () => {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className={`p-2.5 bg-white rounded-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 group shadow-sm`}
+                    className={`p-2.5 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-cyan-400 transition-all duration-300 transform hover:scale-110 group shadow-sm border border-white/20`}
                   >
-                    <IconComponent className="w-4 h-4 text-gray-700 group-hover:text-white transition-colors" strokeWidth={2} />
+                    <IconComponent className="w-4 h-4 text-gray-300 group-hover:text-white transition-colors" strokeWidth={2} />
                   </a>
                 );
               })}
@@ -157,25 +154,25 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar - Copyright & Legal */}
-      <div className="border-t border-gray-300 mt-6">
+      <div className="border-t border-white/20 mt-6">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             {/* Copyright */}
-            <div className="text-sm text-gray-600">
-              <p>© {new Date().getFullYear()} <span className="text-blue-600 font-semibold">Raghuvamshi</span>. All rights reserved.</p>
+            <div className="text-sm text-gray-300">
+              <p>© {new Date().getFullYear()} <span className="text-cyan-400 font-semibold">Raghuvamshi</span>. All rights reserved.</p>
             </div>
 
             {/* Legal Links */}
             <div className="flex items-center space-x-4">
-              <a href="#privacy" className="text-sm text-gray-600 hover:text-blue-600 transition-colors duration-300">
+              <a href="#privacy" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Privacy Policy
               </a>
               <span className="text-gray-400">•</span>
-              <a href="#terms" className="text-sm text-gray-600 hover:text-blue-600 transition-colors duration-300">
+              <a href="#terms" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Terms of Use
               </a>
               <span className="text-gray-400">•</span>
-              <a href="#cookies" className="text-sm text-gray-600 hover:text-blue-600 transition-colors duration-300">
+              <a href="#cookies" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                 Cookie Policy
               </a>
             </div>

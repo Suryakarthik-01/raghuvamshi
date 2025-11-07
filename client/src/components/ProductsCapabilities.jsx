@@ -90,7 +90,7 @@ const ProductsCapabilities = () => {
   };
 
   return (
-    <section className="relative py-20 px-6 sm:px-12 lg:px-20 overflow-hidden">
+    <section className="relative pt-8 pb-20 sm:pt-12 sm:pb-24 lg:pt-16 lg:pb-32 px-4 sm:px-8 lg:px-16 overflow-hidden">
       {/* Dynamic Background */}
       <div className="absolute inset-0 transition-all duration-700">
         {selectedBackground !== null ? (
@@ -111,22 +111,22 @@ const ProductsCapabilities = () => {
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg ${selectedBackground !== null ? 'text-white' : 'text-[rgb(3,46,114)]'}`}>
+        <div className="text-center mb-16 sm:mb-20 lg:mb-24 relative z-50">
+          <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 drop-shadow-lg ${selectedBackground !== null ? 'text-white' : 'text-[rgb(3,46,114)]'}`}>
             Products & Capabilities
           </h2>
-          <div className="flex items-center justify-center space-x-4 mb-6">
-            <div className={`h-1 w-20 rounded-full ${selectedBackground !== null ? 'bg-gradient-to-r from-transparent to-blue-400' : 'bg-gradient-to-r from-transparent to-blue-500'}`}></div>
-            <div className={`h-2 w-2 rounded-full ${selectedBackground !== null ? 'bg-blue-400 shadow-lg shadow-blue-400/50' : 'bg-blue-500'}`}></div>
-            <div className={`h-1 w-20 rounded-full ${selectedBackground !== null ? 'bg-gradient-to-l from-transparent to-blue-400' : 'bg-gradient-to-l from-transparent to-blue-500'}`}></div>
+          <div className="flex items-center justify-center space-x-4 mb-5 sm:mb-6">
+            <div className={`h-1 w-20 sm:w-24 rounded-full ${selectedBackground !== null ? 'bg-gradient-to-r from-transparent to-blue-400' : 'bg-gradient-to-r from-transparent to-blue-500'}`}></div>
+            <div className={`h-2.5 w-2.5 rounded-full ${selectedBackground !== null ? 'bg-blue-400 shadow-lg shadow-blue-400/50' : 'bg-blue-500'}`}></div>
+            <div className={`h-1 w-20 sm:w-24 rounded-full ${selectedBackground !== null ? 'bg-gradient-to-l from-transparent to-blue-400' : 'bg-gradient-to-l from-transparent to-blue-500'}`}></div>
           </div>
-          <p className={`text-lg sm:text-xl max-w-3xl mx-auto drop-shadow-md ${selectedBackground !== null ? 'text-gray-200' : 'text-gray-600'}`}>
+          <p className={`text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed drop-shadow-md ${selectedBackground !== null ? 'text-gray-200' : 'text-gray-600'}`}>
             Pioneering innovation across multiple industries with cutting-edge technology and unmatched expertise.
           </p>
         </div>
 
         {/* Swiper Container */}
-        <div className="relative h-[650px] flex items-center justify-center">
+        <div className="relative h-[400px] sm:h-[440px] lg:h-[480px] flex items-center justify-center">
           {/* Cards */}
           <div className="relative w-full h-full flex items-center justify-center">
             {products.map((product, index) => {
@@ -158,17 +158,17 @@ const ProductsCapabilities = () => {
                 // Left card - partially behind, slightly transparent
                 cardStyle = {
                   ...cardStyle,
-                  transform: 'translateX(-75%) scale(0.88)',
+                  transform: 'translateX(-80%) scale(0.85)',
                   zIndex: 10,
-                  opacity: 0.5,
+                  opacity: 0.4,
                 };
               } else if (isRight) {
                 // Right card - partially behind, slightly transparent
                 cardStyle = {
                   ...cardStyle,
-                  transform: 'translateX(75%) scale(0.88)',
+                  transform: 'translateX(80%) scale(0.85)',
                   zIndex: 10,
-                  opacity: 0.5,
+                  opacity: 0.4,
                 };
               } else {
                 // Hidden cards
@@ -184,7 +184,7 @@ const ProductsCapabilities = () => {
                 <div
                   key={index}
                   style={cardStyle}
-                  className="w-full max-w-lg"
+                  className={`w-full ${isCenter ? 'max-w-md sm:max-w-lg lg:max-w-xl' : 'max-w-sm sm:max-w-md lg:max-w-lg'}`}
                 >
                   <div className={`relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200 ${isCenter ? 'hover:shadow-3xl' : ''}`}>
                     {/* Background overlay for non-center cards */}
@@ -193,7 +193,7 @@ const ProductsCapabilities = () => {
                     )}
 
                     {/* Image Section */}
-                    <div className="relative h-72 overflow-hidden">
+                    <div className="relative h-44 sm:h-48 lg:h-56 overflow-hidden">
                       {/* Product Image */}
                       <img 
                         src={product.image} 
@@ -205,28 +205,28 @@ const ProductsCapabilities = () => {
                     </div>
 
                     {/* Content Section */}
-                    <div className="p-10 relative z-20">
-                      <h3 className="text-3xl font-bold mb-4 text-gray-800">
+                    <div className="p-6 sm:p-7 lg:p-8 relative z-20">
+                      <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-800">
                         {product.title}
                       </h3>
                       
-                      <p className="text-gray-600 mb-6 leading-relaxed">
+                      <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">
                         {product.description}
                       </p>
 
                       {/* Features */}
-                      <div className="space-y-3 mb-6">
+                      <div className="space-y-2 mb-5">
                         {product.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center space-x-3">
+                          <div key={idx} className="flex items-center space-x-2.5">
                             <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${product.gradient}`}></div>
-                            <span className="text-sm text-gray-700 font-medium">{feature}</span>
+                            <span className="text-sm sm:text-base text-gray-700 font-medium">{feature}</span>
                           </div>
                         ))}
                       </div>
 
                       {/* CTA Button - only visible on center card */}
                       {isCenter && (
-                        <button className={`w-full py-3 px-6 bg-gradient-to-r ${product.gradient} text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300`}>
+                        <button className={`w-full py-3 px-6 bg-gradient-to-r ${product.gradient} text-white text-sm sm:text-base font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300`}>
                           Learn More
                         </button>
                       )}
@@ -243,23 +243,23 @@ const ProductsCapabilities = () => {
           {/* Navigation Buttons */}
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-40 bg-white/90 hover:bg-white p-4 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-300 group"
+            className="absolute -left-4 sm:-left-6 lg:-left-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 sm:p-4 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-300 group"
             aria-label="Previous product"
           >
-            <ChevronLeft className="w-6 h-6 text-gray-800 group-hover:text-blue-600 transition-colors" strokeWidth={2.5} />
+            <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7 text-gray-800 group-hover:text-blue-600 transition-colors" strokeWidth={2.5} />
           </button>
           
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-40 bg-white/90 hover:bg-white p-4 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-300 group"
+            className="absolute -right-4 sm:-right-6 lg:-right-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 sm:p-4 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-300 group"
             aria-label="Next product"
           >
-            <ChevronRight className="w-6 h-6 text-gray-800 group-hover:text-blue-600 transition-colors" strokeWidth={2.5} />
+            <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7 text-gray-800 group-hover:text-blue-600 transition-colors" strokeWidth={2.5} />
           </button>
         </div>
 
         {/* Indicators */}
-        <div className="flex justify-center items-center space-x-3 mt-12">
+        <div className="flex justify-center items-center space-x-3 mt-12 sm:mt-14 lg:mt-16 relative z-50">
           {products.map((_, index) => (
             <button
               key={index}
@@ -272,21 +272,6 @@ const ProductsCapabilities = () => {
               aria-label={`Go to product ${index + 1}`}
             />
           ))}
-        </div>
-
-        {/* Additional Info */}
-        <div className="mt-16 text-center">
-          <p className={`mb-6 drop-shadow-md ${selectedBackground !== null ? 'text-gray-200' : 'text-gray-600'}`}>
-            Interested in our products and capabilities?
-          </p>
-          <div className="inline-flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-              Contact Our Team
-            </button>
-            <button className={`px-8 py-4 font-semibold rounded-full shadow-lg hover:shadow-xl border-2 transform hover:-translate-y-1 transition-all duration-300 ${selectedBackground !== null ? 'bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20' : 'bg-white text-blue-600 border-blue-600'}`}>
-              Download Brochure
-            </button>
-          </div>
         </div>
       </div>
     </section>

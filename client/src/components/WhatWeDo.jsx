@@ -97,7 +97,7 @@ const WhatWeDo = () => {
 
   return (
     <section 
-      className="relative py-20 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 overflow-hidden"
+      className="relative py-16 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 overflow-hidden"
     >
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
@@ -107,8 +107,8 @@ const WhatWeDo = () => {
 
       <div className="relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 px-6">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
+        <div className="text-center mb-12 px-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white">
             What We Do
           </h2>
           <div className="flex items-center justify-center space-x-4 mb-6">
@@ -116,7 +116,7 @@ const WhatWeDo = () => {
             <div className="h-2 w-2 rounded-full bg-cyan-500"></div>
             <div className="h-1 w-20 bg-gradient-to-l from-transparent to-cyan-500 rounded-full"></div>
           </div>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
             Delivering comprehensive manufacturing solutions with precision, innovation, and excellence across multiple verticals.
           </p>
         </div>
@@ -191,7 +191,7 @@ const WhatWeDo = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center px-6">
+        <div className="mt-10 text-center px-6">
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <button className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
               Explore Our Capabilities

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState('Home');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -58,12 +60,46 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="lg:hidden text-white p-2.5 rounded-md hover:text-gray-300 transition-colors duration-300">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden text-white p-2.5 rounded-md hover:text-gray-300 transition-colors duration-300"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" strokeWidth={2} />
+            ) : (
+              <Menu className="w-6 h-6" strokeWidth={2} />
+            )}
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-[rgb(3,46,114)] shadow-xl border-t border-white/10">
+            <div className="px-6 py-4 space-y-3">
+              {navItems.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  onClick={() => {
+                    setActiveLink(item.name);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`
+                    block px-4 py-3 text-base font-medium rounded-lg
+                    transition-all duration-300
+                    ${activeLink === item.name 
+                      ? 'bg-white/10 text-white' 
+                      : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                    }
+                  `}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
