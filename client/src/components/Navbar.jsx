@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState('Home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -13,8 +14,27 @@ const Navbar = () => {
     { name: 'Contact Us', href: '#contact' }
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-50 shadow-lg" style={{ backgroundColor: 'rgb(3, 46, 114)' }}>
+    <nav 
+      className={`
+        fixed top-0 left-0 right-0 z-50 
+        transition-all duration-500 ease-in-out
+        ${isScrolled ? 'bg-[rgb(3,46,114)] shadow-lg' : 'bg-transparent'}
+      `}
+    >
       <div className="max-w-7xl mr-auto pr-8 lg:pr-12 pl-20">
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo */}
