@@ -6,6 +6,7 @@ import WhatWeDo from '../components/WhatWeDo';
 import ProductsCapabilities from '../components/ProductsCapabilities';
 import ReachOut from '../components/ReachOut';
 import Footer from '../components/Footer';
+import ContactSection from '../components/ContactSection';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <VideoAbout />
       <WhatWeDo />
       <ProductsCapabilities />
+      <ContactSection/>
       <ReachOut />
       <Footer />
     </div>
